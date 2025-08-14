@@ -29,26 +29,26 @@ export default function ReviewsList({ reviews }: ReviewsListProps) {
       </h3>
       
       {sortedReviews.map((review, index) => (
-        <div key={index} className="bg-white p-6 rounded-lg border border-gray-200">
+        <div key={index} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-start gap-4">
             {/* Avatar */}
             <div className="flex-shrink-0">
-              <div className="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-medium text-sm">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
                 {getInitials(review.reviewerName)}
               </div>
             </div>
             
             {/* Review content */}
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-2">
-                <h4 className="font-medium text-gray-900">{review.reviewerName}</h4>
-                <span className="text-gray-500">•</span>
+              <div className="flex items-center gap-2 mb-3">
+                <h4 className="font-semibold text-gray-900">{review.reviewerName}</h4>
+                <span className="text-gray-400">•</span>
                 <time className="text-sm text-gray-500">
                   {formatRelativeDate(review.date)}
                 </time>
               </div>
               
-              <div className="mb-3">
+              <div className="mb-4">
                 <StarRating rating={review.rating} size="sm" showValue />
               </div>
               

@@ -14,15 +14,15 @@ export default function SortSelect({ value, onChange }: SortSelectProps) {
   ];
 
   return (
-    <div className="flex items-center gap-2">
-      <label htmlFor="sort-select" className="text-sm font-medium text-gray-700 whitespace-nowrap">
+    <div className="flex items-center gap-3 min-w-fit">
+      {/* <label htmlFor="sort-select" className="text-sm font-medium text-gray-700 whitespace-nowrap">
         Sort by:
-      </label>
+      </label> */}
       <select
         id="sort-select"
         value={value}
         onChange={(e) => onChange(e.target.value as SortOption)}
-        className="block w-full px-3 py-2 text-sm text-gray-700 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+        className="block px-4 py-3 text-sm font-medium text-gray-900 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
